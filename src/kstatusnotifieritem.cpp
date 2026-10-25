@@ -1001,8 +1001,9 @@ void KStatusNotifierItemPrivate::setLegacySystemTrayEnabled(bool enabled)
     }
 
     if (enabled) {
+        const auto desktops = qgetenv("XDG_CURRENT_DESKTOP").split(':');
         bool isKde = !qEnvironmentVariableIsEmpty("KDE_FULL_SESSION")
-            || qgetenv("XDG_CURRENT_DESKTOP") == "KDE"
+            || desktops.contains("SonicDE") || desktops.contains("KDE")
             || qgetenv("QT_QPA_PLATFORMTHEME").toLower() == "kde";
         if (!systemTrayIcon && !isKde) {
             if (!QSystemTrayIcon::isSystemTrayAvailable()) {
