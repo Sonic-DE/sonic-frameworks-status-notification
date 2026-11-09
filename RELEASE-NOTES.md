@@ -2,7 +2,7 @@
 
 Sonic Frameworks Status Notification lets apps place their icons and status in the SonicDE system tray.
 
-## Unreleased
+## 6.31.0.1 (2026-11-10)
 
 - Apps now recognize SonicDE and use its modern system tray directly instead of falling back to old-style tray icons.
 
